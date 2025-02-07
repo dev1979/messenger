@@ -1,0 +1,124 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%; /*62.5% of 16px = 10px. So 1rem = 10px*/
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+img, picture, svg, video, canvas {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+.main-wrapper {
+  display: grid;
+  grid-template-columns: 6rem 30rem 1fr;
+  grid-template-rows: 5rem 1fr;
+  align-items: center;
+}
+
+.header {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  background-color: #F8FAFC;
+  border-bottom: 1px solid rgba(160, 192, 230, 0.7);
+  height: 100%;
+  padding: 0 1.2rem;
+  position: relative;
+}
+.header__navigation {
+  list-style-type: none;
+  display: flex;
+  border: 1px solid #a0c0e6;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  padding: 0;
+}
+.header__search {
+  width: 45rem;
+  position: absolute;
+  left: 44rem;
+  top: 1.2rem;
+  border-radius: 50rem;
+  border-color: rgba(160, 192, 230, 0.7);
+  font-size: 1.4rem;
+}
+.header__search:focus {
+  border-color: rgba(160, 192, 230, 0.7);
+}
+.header__group_icon {
+  margin-right: auto;
+}
+.header__three_dots_icon {
+  margin-left: auto;
+  padding-right: 2rem;
+}
+.header__left_icon {
+  position: absolute;
+  left: 36rem;
+}
+.header__right_icon {
+  position: absolute;
+  left: 40rem;
+}
+
+.side-menu {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-color: #F8FAFC;
+  border-right: 1px solid rgba(217, 234, 253, 0.7);
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.side-menu__icon {
+  width: 5rem;
+  height: 5rem;
+  background-color: #7397c4;
+  border-bottom: 1px solid red;
+  margin-bottom: 1rem;
+}
+
+.side-bar {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: #f3f3f3;
+  border-left: 1px solid rgba(217, 234, 253, 0.7);
+  height: calc(100vh - 50px);
+}
+
+.chat-box {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  background-color: #e6ebf0;
+  height: calc(100vh - 50px);
+}

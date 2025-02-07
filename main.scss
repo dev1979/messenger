@@ -9,9 +9,15 @@
     margin: 0;
 }
 
+// reset text unit to rem for better responsiveness
+html{
+    font-size: 62.5%; /*62.5% of 16px = 10px. So 1rem = 10px*/
+}
+
 body{
     line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; //improve text rendering
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 // improve media defaults
@@ -37,4 +43,106 @@ h1, h2, h3, h4, h5, h6{
 // create a root stacking context
 #root, #__next{
     isolation: isolate;
+}
+
+
+// STYLING
+.main-wrapper{
+    display: grid;
+    grid-template-columns: 6rem 30rem 1fr;
+    grid-template-rows: 5rem 1fr;
+    align-items: center;
+}
+
+// header
+.header{
+    grid-column: 1 / 4;
+    grid-row: 1/2;
+    background-color: #F8FAFC;
+    border-bottom: 1px solid rgba(#a0c0e6, 0.7);
+    height: 100%;
+    padding: 0 1.2rem;
+    position: relative;
+
+    &__navigation{
+        list-style-type: none;
+        display: flex;
+        border: 1px solid #a0c0e6;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem;
+        padding: 0;
+    }
+
+    &__search{
+        width: 45rem;
+        position: absolute;
+        left: 44rem;
+        top: 1.2rem;
+        border-radius: 50rem;
+        border-color: rgba(#a0c0e6, 0.7);
+        font-size:1.4rem;
+
+        &:focus{
+            border-color: rgba(#a0c0e6, 0.7);
+    }
+    }
+
+    &__group_icon{
+        margin-right: auto;
+    }
+
+    &__three_dots_icon{
+        margin-left:auto;
+        padding-right: 2rem;
+    }
+   
+    &__left_icon{
+        position: absolute;
+        left: 36rem;
+    }
+    &__right_icon{
+        position: absolute;
+        left: 40rem;
+    }
+}
+
+
+
+
+// side menu
+.side-menu{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: #F8FAFC;
+    border-right: 1px solid rgba(#D9EAFD, 0.7);
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__icon{
+        width: 5rem;
+        height: 5rem;
+        background-color: #7397c4;
+        border-bottom: 1px solid red;
+        margin-bottom: 1rem;
+    }
+}
+
+// side bar
+.side-bar{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: #f3f3f3;
+    border-left: 1px solid rgba(#D9EAFD, 0.7);
+    height: calc(100vh - 50px);
+}
+
+// chat box
+.chat-box{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    background-color: #e6ebf0;  
+    height: calc(100vh - 50px);
 }
