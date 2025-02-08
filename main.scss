@@ -29,6 +29,7 @@ img, picture,svg, video, canvas{
 // inherit fonts for FORM controls
 input, button, textarea, select {
     font: inherit;
+    background-color: inherit;
 }
 
 // avoid text overflows
@@ -64,52 +65,63 @@ $ts:all 0.4s;
     grid-row: 1/2;
     background-color: #F8FAFC;
     border-bottom: 1px solid rgba(#a0c0e6, 0.8);
-    height: 100%;
-    padding: 0 1.2rem;
-    position: relative;
-    color: $light-grey;
+    color: $light-grey; 
+    display: grid;
+    grid-template-columns: 6rem 30rem 3rem 3rem 1fr 1fr 3rem 5rem;
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    padding: 0;
+    
 
-    &__navigation{
-        list-style-type: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 5rem;
-        padding: 0;
+    &__group_icon{
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+ 
+    &__left_icon{
+        grid-row: 1/2;
+        grid-column: 3/4;
+    }
+
+    &__right_icon{
+        grid-row: 1/2;
+        grid-column: 4/5;
     }
 
     &__search{
-        width: 45rem;
-        position: absolute;
-        left: 44rem;
-        top: 1.2rem;
-        border-radius: 50rem;
-        border-color: rgba(#a0c0e6, 8);
-        font-size:1.4rem;
+        grid-row: 1/2;
+        grid-column: 5/6;
+        font-size:1.3rem;
 
-        &:focus{
-            border-color: rgba(#5b81b1, 0.8);
-    }
-    }
-
-    &__group_icon{
-        margin-right: auto;
+        
+        
+        &_input{
+            border-radius: 50rem;
+            border:solid 1px rgba(#a0c0e6, 0.8);
+            outline: none;
+            width: 100%;
+            padding-left: 1.5rem;
+            transition: $ts;
+            &:focus{
+                border-color: rgba(#30527c, 0.8);
+                }
+        }
     }
 
     &__three_dots_icon{
-        margin-left:auto;
-        padding-right: 2rem;
+        grid-row: 1/2;
+        grid-column: 7/8;
         font-size: 1.5rem;
     }
    
-    &__left_icon{
-        position: absolute;
-        left: 36rem;
+    &__user_icon{
+        grid-row: 1/2;
+        grid-column: 8/9;
     }
-    &__right_icon{
-        position: absolute;
-        left: 40rem;
-    }
+    
 }
 
 
@@ -122,16 +134,17 @@ $ts:all 0.4s;
     height: calc(100vh - 50px);
     display: flex;
     flex-direction: column;
+    font-size: 1.1rem;
     align-items: center;
     align-content: space-around;
     color: $light-grey;
     transition: $ts;
 
     &__icon{
-        width: 5rem;
-        height: 5rem;
-        margin-bottom: 0.5rem;
-        padding-top: 0.5rem;
+        width: 6rem;
+        height: 6rem;
+        margin-bottom: 1rem;
+        padding-top: 1rem;
         text-align: center;
         
         
@@ -186,9 +199,11 @@ $ts:all 0.4s;
         grid-template-columns: 4em 1fr 2em;
         grid-template-rows: 1fr 1fr;
         align-content: space-between;
+        font-size: 1.3rem;
+        color: $dark-grey;
         padding: 1rem;
         &:hover, :focus{
-            background-color: #f3eaea;
+            background-color: #f0ecec;
         }
     }
 
@@ -218,12 +233,77 @@ $ts:all 0.4s;
   
 }
 
-
-
 // chat box
 .chat-box{
     grid-column: 3 / 4;
     grid-row: 2 / 3;
     background-color: #e6ebf0;  
     height: calc(100vh - 50px);
+    padding: 2rem 4rem;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3rem;
+    
+    &__chat-editor{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        border: solid 1px rgba($light-grey, 0.5);
+        border-radius: 0.3rem;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.5rem 0 0.5rem;
+
+        display: grid;
+        grid-template-columns: 10rem 1fr 20rem;
+        grid-template-rows: 1fr;
+    }
+
+    &__message-box{
+        font-size: 1.5rem;
+        height: 2.5rem;
+        border: none;
+        outline: none;
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+
+    &__message{
+        font-size: 1.3rem;
+        color: $dark-grey;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+
+    &__buttons{
+        grid-row: 1/2;
+        grid-column: 3/4;
+    }
+
+    &__button{
+        border: none;
+        outline: none;
+        background-color: inherit;
+        transition: $ts;
+    }
+
+    &__button:hover{
+        background-color: rgba($color: #a0c0e6, $alpha: 0.4);
+        color: #16457e;
+        border-radius: 0.5rem;
+    }
+
+}
+
+
+.btn--divider{
+    background-color: none;
+    outline: none;
+    font-size: 2rem;
+    
+}
+
+.btn--divider:hover{
+    background-color: inherit;
 }
