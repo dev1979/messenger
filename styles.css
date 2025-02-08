@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -44,6 +46,11 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-rows: 5rem 1fr;
   align-items: center;
 }
+@media (max-width: 1150px) {
+  .main-wrapper {
+    grid-template-columns: 6rem 1fr;
+  }
+}
 
 .header {
   grid-column: 1/4;
@@ -59,22 +66,52 @@ h1, h2, h3, h4, h5, h6 {
   height: 5rem;
   padding: 0;
 }
+@media (max-width: 1150px) {
+  .header {
+    grid-template-columns: 3rem 3rem 1fr 0.4fr 3rem 5rem;
+  }
+}
 .header__group_icon {
   grid-row: 1/2;
   grid-column: 1/2;
+}
+@media (max-width: 1150px) {
+  .header__group_icon {
+    display: none;
+  }
 }
 .header__left_icon {
   grid-row: 1/2;
   grid-column: 3/4;
 }
+@media (max-width: 1150px) {
+  .header__left_icon {
+    grid-column: 1/2;
+  }
+}
 .header__right_icon {
   grid-row: 1/2;
   grid-column: 4/5;
+}
+@media (max-width: 1150px) {
+  .header__right_icon {
+    grid-column: 2/3;
+  }
 }
 .header__search {
   grid-row: 1/2;
   grid-column: 5/6;
   font-size: 1.3rem;
+}
+@media (max-width: 1150px) {
+  .header__search {
+    grid-column: 3/4;
+  }
+}
+@media (max-width: 600px) {
+  .header__search {
+    display: none;
+  }
 }
 .header__search_input {
   border-radius: 50rem;
@@ -92,9 +129,19 @@ h1, h2, h3, h4, h5, h6 {
   grid-column: 7/8;
   font-size: 1.5rem;
 }
+@media (max-width: 1150px) {
+  .header__three_dots_icon {
+    grid-column: 5/6;
+  }
+}
 .header__user_icon {
   grid-row: 1/2;
   grid-column: 8/9;
+}
+@media (max-width: 1150px) {
+  .header__user_icon {
+    grid-column: 6/7;
+  }
 }
 
 .side-menu {
@@ -140,6 +187,11 @@ h1, h2, h3, h4, h5, h6 {
   height: calc(100vh - 50px);
   overflow: auto;
   transition: all 0.4s;
+}
+@media (max-width: 1150px) {
+  .side-bar {
+    display: none;
+  }
 }
 .side-bar__header {
   display: flex;
@@ -197,13 +249,18 @@ h1, h2, h3, h4, h5, h6 {
   grid-column: 3/4;
   grid-row: 2/3;
   background-color: #e6ebf0;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 5rem);
   padding: 2rem 4rem;
   align-items: center;
   align-content: center;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 4rem;
+}
+@media (max-width: 1150px) {
+  .chat-box {
+    grid-column: 2/3;
+  }
 }
 .chat-box__chat-editor {
   grid-column: 1/2;
