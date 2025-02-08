@@ -67,7 +67,7 @@ $ts:all 0.4s;
     border-bottom: 1px solid rgba(#a0c0e6, 0.8);
     color: $light-grey; 
     display: grid;
-    grid-template-columns: 6rem 30rem 3rem 3rem 1fr 1fr 3rem 5rem;
+    grid-template-columns: 6rem 30rem 3rem 3rem 1fr 0.4fr 3rem 5rem;
     grid-template-rows: 1fr;
     justify-content: space-between;
     align-items: center;
@@ -224,6 +224,9 @@ $ts:all 0.4s;
     &__chat-initial{
         grid-row: 2 / 3;
         grid-column: 2 / 3;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
     &__date{
@@ -241,9 +244,10 @@ $ts:all 0.4s;
     height: calc(100vh - 50px);
     padding: 2rem 4rem;
     align-items: center;
+    align-content: center;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3rem;
+    grid-template-rows: 1fr 4rem;
     
     &__chat-editor{
         grid-column: 1 / 2;
@@ -255,7 +259,7 @@ $ts:all 0.4s;
         padding: 0 0.5rem 0 0.5rem;
 
         display: grid;
-        grid-template-columns: 10rem 1fr 20rem;
+        grid-template-columns: 10rem 1fr 18rem;
         grid-template-rows: 1fr;
     }
 
@@ -279,6 +283,8 @@ $ts:all 0.4s;
     &__buttons{
         grid-row: 1/2;
         grid-column: 3/4;
+        display: flex;
+        align-content: center;
     }
 
     &__button{
